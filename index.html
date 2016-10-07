@@ -6,19 +6,25 @@
 	<link rel="stylesheet" href="css/pixel_studio.css">
 </head>
 <body>
+
 	<div id="palette">
 		<ul id="tools">
 			<li></li>
-
 		</ul>
 		<ul id="colors">
 			<li></li>
 		</ul>
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="app/pixel_studio.js"></script>
 	<script src="app/color.class.js"></script>
 	<script src="app/tool.class.js"></script>
 	<script src="app/palette.js"></script>
+	<script>
+		$(function(){
+			pixel_studio.init();
+		});
+	</script>
 </body>
 </html>

@@ -10,4 +10,8 @@ class Color{
 		this.name  		= name;
 		this.color_rgb 	= color;
 	}
+
+	to_string(){
+		return "rgb("+this.color_rgb.join(',')+")";
+	}
 }
