@@ -1,5 +1,5 @@
 
-pixel_studio.palette = {
+pixel_studio.palette_color = {
 
 	colors: [],
 	color_selected: null,
@@ -12,7 +12,7 @@ pixel_studio.palette = {
 						.addClass('selected');
 	},
 
-	init_colors: function( colors ){
+	init: function( colors ){
 
 		this.colors = colors;
 
@@ -41,10 +41,12 @@ pixel_studio.palette = {
 		
 		var self = this;
 
-		$('#colors').on('click', 'li', function(){		
+		$('#colors').on('click', 'li', function(){
+
 			let index = $( "#colors li" ).index( this );
-			self.select_color(self.colors[index]);
+			self.select_color(self.colors[index]);		
 		});
+
 
 		console.log('palette : colors ready');
 	}

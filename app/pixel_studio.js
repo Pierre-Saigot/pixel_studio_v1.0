@@ -12,7 +12,7 @@ var pixel_studio = {
 			new Color('myst', [80,62,116]),
 			new Color('lilas', [151,146,197])
 		];
-		this.palette.init_colors( colors );
+		this.palette_color.init( colors );
 
 		console.log("Pixel studio is initiated and  ready");
 	}
