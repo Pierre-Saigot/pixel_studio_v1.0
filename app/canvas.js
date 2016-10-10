@@ -16,6 +16,21 @@ pixel_studio.canvas = {
 	context: null,
 
 	/**
+	 * Dessine un pixel sur la zone de dessin
+	 * @param  {number} x     coordonnée horizontale du pixel
+	 * @param  {number} y     coordonnée verticale du pixel
+	 * @param  {Color} color  couleur du pixel : instance de Color
+	 */
+	draw: function(x, y, color){
+
+		let px = (x-1) * this.pixel_dimension,
+			py = (y-1) * this.pixel_dimension;
+
+		this.context.fillStyle = color.to_string();
+		this.context.fillRect(px,py,this.pixel_dimension,this.pixel_dimension);
+	},
+
+	/**
 	 * Préparation de la zone de dessin
 	 * @param  {string} div_id         Nom de la div dans lequel sera placé le  canvas
 	 * @param  {number} width          Largeur exact du canvas en pixel ecran
