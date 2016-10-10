@@ -14,6 +14,15 @@ var pixel_studio = {
 		];
 		this.palette_color.init( colors );
 
+		// outils de dessin
+		
+		let tools = [
+			new Tool('pencil', 'images/pencil.png'),
+			new Tool('eraser', 'images/eraser.png')
+		];
+
+		this.palette_tool.init( tools );
+
 		console.log("Pixel studio is initiated and  ready");
 	}
 };
