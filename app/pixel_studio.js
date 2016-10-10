@@ -23,6 +23,10 @@ var pixel_studio = {
 
 		this.palette_tool.init( tools );
 
+		// canvas
+		
+		this.canvas.init('zone_dessin', window.innerWidth, window.innerHeight  - 5, 100);
+
 		console.log("Pixel studio is initiated and  ready");
 	}
 };
