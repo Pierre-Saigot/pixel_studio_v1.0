@@ -87,18 +87,5 @@ pixel_studio.canvas = {
 			x: Math.floor((mouse_event.clientX - offset.left) / this.pixel_dimension)+1,
 			y: Math.floor((mouse_event.clientY - offset.top) / this.pixel_dimension)+1
 		}; 
-	},
-
-	on_click: function(mouse_event){
-
-		let ps 	 	 = pixel_studio,
-			position = ps.canvas.screen_to_canvas(mouse_event),
-			tool 	 = ps.palette_tool.get_selected(),
-			color 	 = ps.palette_color.get_selected();
-
-		// @todo
-		let c = (tool.name == 'pencil') ? color  : ps.palette_color.bg_color;
-		
-		ps.canvas.draw(position.x, position.y, c);
 	}
 };
