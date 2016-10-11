@@ -3,6 +3,15 @@ var pixel_studio = {
 
 	init: function(){
 
+		// data
+		
+		this.data.init();
+
+		// canvas
+		
+		this.canvas.init('zone_dessin', window.innerWidth, window.innerHeight  - 5, 64, new Color('white', [255, 255, 255]));
+
+
 		// couleurs de la palette
 		
 		let colors = [
@@ -14,19 +23,17 @@ var pixel_studio = {
 		];
 		this.palette_color.init( colors );
 
+
 		// outils de dessin
 		
 		let tools = [
 			new Pencil(this.canvas),
-			new Eraser(this.canvas)
+			new Eraser(this.canvas, this.canvas.get_background_color())
 		];
 
 		this.palette_tool.init( tools );
 
-		// canvas
 		
-		this.canvas.init('zone_dessin', window.innerWidth, window.innerHeight  - 5, 64);
-
 		console.log("Pixel studio is initiated and  ready");
 	}
 };

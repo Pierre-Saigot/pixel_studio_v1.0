@@ -15,6 +15,12 @@ pixel_studio.canvas = {
 	$canvas: null,
 	context: null,
 
+	bg_color: null,
+
+	get_background_color: function(){
+		return this.bg_color;
+	},
+
 	/**
 	 * Dessine un pixel sur la zone de dessin
 	 * @param  {number} x     coordonnée horizontale du pixel
@@ -28,6 +34,8 @@ pixel_studio.canvas = {
 
 		this.context.fillStyle = color.to_string();
 		this.context.fillRect(px,py,this.pixel_dimension,this.pixel_dimension);
+	
+		pixel_studio.data.set_pixel(x, y, color);
 	},
 
 	/**
@@ -37,7 +45,9 @@ pixel_studio.canvas = {
 	 * @param  {number} height         Hauteur maximum du camvas en pixel ecran
 	 * @param  {number} nb_pixel_width Nombre de pixel en largeur
 	 */
-	init: function(div_id, width, height, nb_pixel_width){
+	init: function(div_id, width, height, nb_pixel_width, bg_color){
+
+		this.bg_color = bg_color;
 
 		//  Calcul du pixel_dimension
 		

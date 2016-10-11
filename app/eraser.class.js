@@ -1,10 +1,10 @@
 
 class Eraser extends Tool{
 
-	constructor( canvas ){
+	constructor( canvas, bg_color ){
 		super('eraser', 'images/eraser.png');
 		this.canvas 	= canvas;
-		this.bg_color 	= new Color('white', [255,255,255]);
+		this.bg_color 	= bg_color;
 	}
 
 	on_mousedown( mouse_event ){
