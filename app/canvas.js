@@ -63,9 +63,16 @@ pixel_studio.canvas = {
 
 		// Gestion des évènements
 		
-		this.$canvas.on('click', this.on_click);
+		this.$canvas.on('mousedown mouseup mousemove', this.on_mouse_event);
 
 		console.log('canvas is ready');
+	},
+
+	on_mouse_event: function(mouse_event){
+
+		let tool = pixel_studio.palette_tool.get_selected()
+			type = 'on_'+mouse_event.type;
+		if(tool[type])	tool[type](mouse_event);
 	},
 
 	/**
