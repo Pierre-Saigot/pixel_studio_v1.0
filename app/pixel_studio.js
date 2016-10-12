@@ -28,6 +28,7 @@ var pixel_studio = {
 		
 		let tools = [
 			new Pencil(this.canvas),
+			new Line(this.canvas),
 			new Eraser(this.canvas, this.canvas.get_background_color())
 		];
 

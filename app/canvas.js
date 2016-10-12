@@ -15,6 +15,9 @@ pixel_studio.canvas = {
 	$canvas: null,
 	context: null,
 
+	clicks: 0,
+	lastClick: [0, 0],
+
 	bg_color: null,
 
 	get_background_color: function(){
@@ -36,6 +39,33 @@ pixel_studio.canvas = {
 		this.context.fillRect(px,py,this.pixel_dimension,this.pixel_dimension);
 	
 		pixel_studio.data.set_pixel(x, y, color);
+	},
+
+	/**
+	 * Trace une ligne sur la zone de dessin
+	 * @param  {number} x     coordonnée horizontale du tracet
+	 * @param  {number} y     coordonnée verticale du tracet
+	 * @param  {Color} color  couleur du tracet : instance de Color
+	 */
+	draw_line: function(x, y, color){
+
+		let px = (x-1) * this.pixel_dimension,
+			py = (y-1) * this.pixel_dimension;
+
+		if (this.clicks != 1) {
+		        this.clicks++;
+		    } else {
+		        this.context.beginPath();
+		        this.context.moveTo(this.lastClick[0], this.lastClick[1]);
+		        this.context.lineTo(px, py, this.pixel_dimension);
+		        
+		        this.context.strokeStyle = color.to_string();
+		        this.context.stroke();
+		        
+		        this.clicks = 0;
+		    }
+		    
+		    this.lastClick = [px, py];
 	},
 
 	/**
