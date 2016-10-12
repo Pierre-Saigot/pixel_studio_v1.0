@@ -18,7 +18,7 @@ class Line extends Tool{
 	}
 
 	on_mousemove( mouse_event ){
-		if(this.drawing)		this.draw(mouse_event);
+		
 	}
 
 	draw( mouse_event ){
